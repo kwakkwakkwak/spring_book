@@ -31,23 +31,23 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 
-//	@Override
-//	public MemberVO readMember(String userid) throws Exception {
-//		return (MemberVO) 
-//				sqlSession.selectOne(namespace+".selectMember", userid);
-//	}
-//
-//
-//	@Override
-//	public MemberVO readWithPW(String userid, String pw) throws Exception {
-//		
-//		Map<String, Object> paramMap = new HashMap<String, Object>();
-//		
-//		paramMap.put("userid", userid);
-//		paramMap.put("userpw", pw);
-//		
-//		return sqlSession.selectOne(namespace+".readWithPW", paramMap);
-//	}
+	@Override
+	public MemberVO readMember(String userid) throws Exception {
+		return (MemberVO)
+				sqlSession.selectOne(namespace+".selectMember", userid);
+	}
+
+
+	@Override
+	public MemberVO readWithPW(String userid, String pw) throws Exception {
+
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+
+		paramMap.put("userid", userid);
+		paramMap.put("userpw", pw);
+
+		return sqlSession.selectOne(namespace+".readWithPW", paramMap);
+	}
 
 }
 
